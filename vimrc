@@ -1,7 +1,8 @@
 set nocompatible              " be iMproved
 filetype off                  " required!
+" set u vundle : git clone http://github.com/gmarik/vundle.git  ~/.vim/vundle.git
 
-set rtp+=~/.vim/bundle/vundle/
+set rtp+=~/.vim/vundle.git/
 call vundle#rc()
 
 Bundle 'gmarik/vundle'
@@ -11,7 +12,6 @@ Bundle 'Markdown'
 Bundle 'snipMate'
 Bundle 'editorconfig-vim'
 Bundle 'junegunn/vim-easy-align'
-Bundle 'mattn/emmet-vim'
 
 "Bundle 'candy.vim'
 "colorscheme candy
