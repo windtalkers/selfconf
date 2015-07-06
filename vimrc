@@ -1,6 +1,6 @@
 set nocompatible              " be iMproved
 filetype off                  " required!
-" set u vundle : git clone http://github.com/gmarik/vundle.git  ~/.vim/vundle.git
+" set up vundle : git clone http://github.com/gmarik/vundle.git  ~/.vim/vundle.git
 
 set rtp+=~/.vim/vundle.git/
 call vundle#rc()
