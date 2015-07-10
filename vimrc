@@ -1,8 +1,8 @@
 set nocompatible              " be iMproved
 filetype off                  " required!
 " set up vundle : git clone http://github.com/gmarik/vundle.git  ~/.vim/vundle.git
-
 set rtp+=~/.vim/vundle.git/
+
 call vundle#rc()
 
 Bundle 'gmarik/vundle'
@@ -16,24 +16,32 @@ Bundle 'junegunn/vim-easy-align'
 "Bundle 'candy.vim'
 "colorscheme candy
 "Bundle 'Solarized'
+"syntax enable
 "set background=dark
-"colorscheme Solarized
+"let g:solarized_termcolors=256
+"colorscheme solarized
+
 Bundle 'molokai'
 colorscheme molokai
-set t_Co=256
-let g:molokai_original = 1
+"Bundle 'hybrid.vim'
+"colorscheme hybrid
+"Bundle 'chriskempson/base16-vim'
+"set background=dark
+"colorscheme base16-tomorrow
 
 Bundle 'SingleCompile'
 nmap <F9> :SCCompile<cr>
 nmap <F10> :SCCompileRun<cr> 
 
 Bundle 'PDV--phpDocumentor-for-Vim'
-inoremap <C-P> <ESC>:call PhpDocSingle()<CR>i 
-nnoremap <C-P> :call PhpDocSingle()<CR> 
-vnoremap <C-P> :call PhpDocRange()<CR> 
+"inoremap <C-P> <ESC>:call PhpDocSingle()<CR>i 
+"nnoremap <C-P> :call PhpDocSingle()<CR> 
+"vnoremap <C-P> :call PhpDocRange()<CR> 
 
 Bundle 'mattn/emmet-vim'
-let g:user_emmet_expandabbr_key = '<leader><leader>'
+let g:user_emmet_install_global = 0
+autocmd FileType html,css EmmetInstall
+
 
 "TList
 Bundle 'taglist.vim'
@@ -70,16 +78,27 @@ endfunction
 
 Bundle 'L9'
 Bundle 'FuzzyFinder'
-nnoremap <silent> sj     :FufBuffer<CR>
-nnoremap <silent> sk     :FufFileWithCurrentBufferDir<CR>
-nnoremap <silent> sK     :FufFileWithFullCwd<CR>
-nnoremap <silent> s<C-k> :FufFile<CR>
-nnoremap <silent> sl     :FufCoverageFileChange<CR>
-nnoremap <silent> sL     :FufCoverageFileChange<CR>
-nnoremap <silent> s<C-l> :FufCoverageFileRegister<CR>
-nnoremap <silent> sd     :FufDirWithCurrentBufferDir<CR>
-nnoremap <silent> sD     :FufDirWithFullCwd<CR>
-nnoremap <silent> s<C-d> :FufDir<CR>
+
+" 设置FuzzyFinder
+let mapleader="\\"
+map <leader>F :FufFile<CR>
+map <leader>f :FufTaggedFile<CR>
+map <leader>g :FufTag<CR>
+map <leader>b :FufBuffer<CR></mapleader>
+map <leader>d :FufDirWithCurrentBufferDir<CR>
+map <leader>D :FufDir<CR></mapleader>
+
+
+"nnoremap <silent> sj     :FufBuffer<CR>
+"nnoremap <silent> sk     :FufFileWithCurrentBufferDir<CR>
+"nnoremap <silent> sK     :FufFileWithFullCwd<CR>
+"nnoremap <silent> s<C-k> :FufFile<CR>
+"nnoremap <silent> sl     :FufCoverageFileChange<CR>
+"nnoremap <silent> sL     :FufCoverageFileChange<CR>
+"nnoremap <silent> s<C-l> :FufCoverageFileRegister<CR>
+"nnoremap <silent> sd     :FufDirWithCurrentBufferDir<CR>
+"nnoremap <silent> sD     :FufDirWithFullCwd<CR>
+"nnoremap <silent> s<C-d> :FufDir<CR>
 
 
 filetype plugin indent on     " required!
@@ -118,8 +137,16 @@ set number
 "自动切换到编辑文件路径
 "set autochdir
 
+"显示执行的命令
+set showcmd
+
 "下面这句是为了让较长的行显示
 set display=lastline
+
+" 显示光标当前位置
+set ruler
+" 高亮显示当前行/列
+set cursorline
 
 "较长的行可以行中上下移动
 map <down> gj
@@ -137,6 +164,7 @@ let html_use_css = 1
 "修正文件类型
 autocmd BufNewFile,BufRead *.tpl,*.htm,tplt set filetype=html
 autocmd BufNewFile,BufRead *.xaml set filetype=xml
+autocmd BufNewFile,BufRead *.less set filetype=css
 autocmd BufNewFile,BufRead *.go set filetype=go
 
 "编辑jade模板时tab、缩进改成两个空格比较好看
@@ -152,20 +180,26 @@ autocmd BufNewFile,BufRead *.less set ft=css
 autocmd BufNewFile,BufRead *.txt,*.text,*.data set noexpandtab
 
 "markdown语法文档
-au BufRead,BufNewFile *.mkd,*.markdown,*.mdwn,*.text set filetype=markdown
+autocmd BufRead,BufNewFile *.mkd,*.markdown,*.mdwn,*.text set filetype=markdown
 
 "设置自动完成词典
-autocmd Filetype javascript,html,html set dictionary+=$vimfiles/dict/javascript
-autocmd Filetype php set dictionary+=$vimfiles/dict/php
+set omnifunc=syntaxcomplete#Complete
+"autocmd Filetype javascript,html,html set dictionary+=$vimfiles/dict/javascript
+"autocmd Filetype php set dictionary+=$vimfiles/dict/php
+"autocmd FileType python set omnifunc=pythoncomplete#Complete
+"autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS 
+"autocmd FileType html set omnifunc=htmlcomplete#CompleteTags 
+"autocmd FileType css set omnifunc=csscomplete#CompleteCSS 
+"autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags 
+"autocmd FileType php set omnifunc=phpcomplete#CompletePHP 
+"autocmd FileType c set omnifunc=ccomplete#Complete
 
 "每次编辑完.vimrc文件时立刻加载
 "autocmd BufWritePost *vimrc :source $MYVIMRC
 
 "<F12>快速编辑.vimrc
-map <F12> :e $MYVIMRC<CR>
+"map <F12> :e $MYVIMRC<CR>
 
-"<F11>快速编辑记事本
-map <F11> :e ~/.vim/feng.text<CR>
 
 "进入当前文件的目录
 map <leader>cd :cd %:h<CR>:pwd<CR>
@@ -233,12 +267,6 @@ else
     set mouse=
 endif
 
-
-""""""""" Unix vim 配置 """""""""
-if has('unix')
-
-
-endif
 
 
 """"""""" windows gvim设置 """"""""
