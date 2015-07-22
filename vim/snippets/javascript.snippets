@@ -1,0 +1,50 @@
+# try_catch
+snippet try
+	try {
+		${1}	
+	} catch(e) {${2}}
+# debugger
+snippet debug
+	debugger;
+snippet ifelse
+	if (${1:exp}) {
+		${2://code}
+	} else {
+		${3://code}
+	}
+snippet cfile
+	/**
+	 * @file ${1:file desc}
+	 * @author shenzhou@baidu.com
+	 * @version 1.0
+	 * @copyright `strftime("%Y")` Baidu.com, Inc. All Rights Reserved
+	 */
+snippet cfun
+	/**
+	 * {function desc}
+	 * 
+	 * @param {type} desc
+	 * @return {type desc} desc
+	 */
+snippet cmod
+	/**
+	 * ${1:module desc}
+	 * @exports ${2:modulename}
+	 * @author shenzhou@baidu.com
+	 * @version 1.0
+	 * @copyright `strftime("%Y")` Baidu.com, Inc. All Rights Reserved
+	 */
+snippet @p
+	@param {${1:Object}} ${2:name} ${3:param desc}
+snippet @r
+	@return {${1:Object}} ${2:return desc}
+snippet @c
+	/** 
+	 * @class 
+	 */
+snippet @con
+	/**
+	 * @constructor
+	 */
+snippet @see
+	@see {@link ${1:link}|${2:link info}}
