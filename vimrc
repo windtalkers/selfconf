@@ -5,7 +5,7 @@ set rtp+=~/.vim/vundle.git/
 
 call vundle#rc()
 
-Bundle 'gmarik/vundle.git'
+Bundle 'gmarik/Vundle.git'
 Bundle 'plasticboy/vim-markdown'
 Bundle 'The-NERD-Commenter'
 Bundle 'Markdown'
