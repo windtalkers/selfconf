@@ -21,6 +21,7 @@ var domains = {
   "alexlur.org": 1, 
   "finalion.jp": 1, 
   "nrk.no": 1, 
+  "vultr.com":1,
   "nyt.com": 1, 
   "cmule.com": 1, 
   "gappp.org": 1, 
