@@ -15,6 +15,7 @@ var domains = {
   "idv.tw": 1,
   "goo.gl":1,
   "angularjs.org":1,	
+  "html5rocks.com":1,
   "mail-archive.com": 1, 
   "surfeasy.com.au": 1, 
   "hihistory.net": 1, 
