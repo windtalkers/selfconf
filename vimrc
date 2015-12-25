@@ -13,16 +13,16 @@ Bundle 'snipMate'
 Bundle 'editorconfig-vim'
 Bundle 'junegunn/vim-easy-align'
 
-"Bundle 'candy.vim'
-"colorscheme candy
-"Bundle 'Solarized'
-"syntax enable
-"set background=dark
-"let g:solarized_termcolors=256
-"colorscheme solarized
+"Bundle 'kristijanhusak/vim-hybrid-material'
+"colorscheme hybrid_material
 
-Bundle 'molokai'
-colorscheme molokai
+Bundle 'altercation/vim-colors-solarized'
+syntax enable
+set background=dark
+colorscheme solarized
+let g:solarized_termcolors=256
+"Bundle 'molokai'
+"colorscheme molokai
 "Bundle 'hybrid.vim'
 "colorscheme hybrid
 "Bundle 'chriskempson/base16-vim'
@@ -116,7 +116,6 @@ set termencoding=utf-8
 
 
 "通用的一些样式
-"colorscheme wf2
 set laststatus=2
 set statusline=%F\ [%{&fenc}\ %{&ff}\ L%l/%L\ C%c]\ %=%{strftime('%Y-%m-%d\ %H:%M')}
 "设置viminfo
@@ -306,3 +305,5 @@ let g:html_indent_style1 = "inc"
 let g:netrw_altv      = 1
 let g:netrw_winsize   = 23
 let g:netrw_liststyle = 3
+
+set nofoldenable
