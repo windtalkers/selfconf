@@ -22,7 +22,6 @@ set background=dark
 colorscheme solarized
 let g:solarized_termcolors=256
 set term=screen-256color
-" ~/.vimrc
 " Make Vim recognize XTerm escape sequences for Page and Arrow
 " keys combined with modifiers such as Shift, Control, and Alt.
 " See http://www.reddit.com/r/vim/comments/1a29vk/_/c8tze8p
