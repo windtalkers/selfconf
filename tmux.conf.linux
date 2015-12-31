@@ -28,6 +28,7 @@ set-option -g message-fg colour166 #orange
 # pane number display
 set-option -g display-panes-active-colour colour33 #blue
 set-option -g display-panes-colour colour166 #orange
+set -g renumber-windows on  
 # clock
 set-window-option -g clock-mode-colour green #green
 setw -g clock-mode-style 24
@@ -41,8 +42,8 @@ set -g status-right '#[fg=green]#H #[fg=green,bg=default,bright]#(tmux-mem-cpu-l
 
 # C-b is not acceptable -- Vim uses it
 set-option -g prefix C-a
-bind-key C-a last-window
-
+#bind-key C-a last-window
+bind C-a send-prefix -2
 # Start numbering at 1
 set -g base-index 1
 
