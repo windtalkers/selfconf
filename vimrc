@@ -21,7 +21,7 @@ syntax enable
 set background=dark
 colorscheme solarized
 let g:solarized_termcolors=256
-set term=screen-256color
+set term=screen-256color 
 " Make Vim recognize XTerm escape sequences for Page and Arrow
 " keys combined with modifiers such as Shift, Control, and Alt.
 " See http://www.reddit.com/r/vim/comments/1a29vk/_/c8tze8p
@@ -53,6 +53,13 @@ Bundle 'PDV--phpDocumentor-for-Vim'
 "inoremap <C-P> <ESC>:call PhpDocSingle()<CR>i 
 "nnoremap <C-P> :call PhpDocSingle()<CR> 
 "vnoremap <C-P> :call PhpDocRange()<CR> 
+
+Bundle 'hail2u/vim-css3-syntax'
+augroup VimCSS3Syntax
+     autocmd!
+     autocmd FileType css setlocal iskeyword+=-
+augroup END
+
 
 Bundle 'mattn/emmet-vim'
 let g:user_emmet_install_global = 0
@@ -175,6 +182,7 @@ let html_use_css = 1
 
 "快速搜索当前目录下的文件
 "autocmd BufRead * set path=expand('%:h').'/**'
+Bundle 'othree/html5.vim'
 
 "修正文件类型
 autocmd BufNewFile,BufRead *.tpl,*.htm,tplt set filetype=html
@@ -202,9 +210,9 @@ set omnifunc=syntaxcomplete#Complete
 "autocmd Filetype javascript,html,html set dictionary+=$vimfiles/dict/javascript
 "autocmd Filetype php set dictionary+=$vimfiles/dict/php
 "autocmd FileType python set omnifunc=pythoncomplete#Complete
-"autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS 
-"autocmd FileType html set omnifunc=htmlcomplete#CompleteTags 
-"autocmd FileType css set omnifunc=csscomplete#CompleteCSS 
+autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS 
+autocmd FileType html set omnifunc=htmlcomplete#CompleteTags 
+autocmd FileType css set omnifunc=csscomplete#CompleteCSS 
 "autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags 
 "autocmd FileType php set omnifunc=phpcomplete#CompletePHP 
 "autocmd FileType c set omnifunc=ccomplete#Complete
