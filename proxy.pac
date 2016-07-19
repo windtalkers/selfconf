@@ -2472,6 +2472,7 @@ var domains = {
   "freewebs.com": 1, 
   "ig.com.br": 1, 
   "dwheeler.com": 1, 
+  "ampproject.org":1,
   "famunion.com": 1, 
   "173ng.com": 1, 
   "minghui.org": 1, 
