@@ -584,6 +584,7 @@ var domains = {
   "eevpn.com": 1, 
   "dafagood.com": 1, 
   "sinocast.com": 1, 
+  "ampbyexample.com":1,
   "opera.com": 1, 
   "mpfinance.com": 1, 
   "pornvisit.com": 1, 
