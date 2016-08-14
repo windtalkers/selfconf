@@ -33,7 +33,7 @@ set term=screen-256color
 "javascript syntax highlighting configuration
 let g:javascript_plugin_jsdoc = 1 
 let g:javascript_plugin_ngdoc = 1
-set foldmethod=syntax
+"set foldmethod=syntax
 
 " Make Vim recognize XTerm escape sequences for Page and Arrow
 " keys combined with modifiers such as Shift, Control, and Alt.
