@@ -12,16 +12,29 @@ Bundle 'Markdown'
 Bundle 'snipMate'
 Bundle 'editorconfig-vim'
 Bundle 'junegunn/vim-easy-align'
-
+Bundle 'crusoexia/vim-monokai'
+Bundle 'pangloss/vim-javascript'
+Bundle 'crusoexia/vim-javascript-lib'
 "Bundle 'kristijanhusak/vim-hybrid-material'
 "colorscheme hybrid_material
+"Bundle 'altercation/vim-colors-solarized'
+"syntax enable
+"set background=dark
+"colorscheme solarized
+"let g:solarized_termcolors=256
 
-Bundle 'altercation/vim-colors-solarized'
-syntax enable
-set background=dark
-colorscheme solarized
-let g:solarized_termcolors=256
+syntax on
+colorscheme monokai
+set t_Co=256  " vim-monokai now only support 256 colours in terminal.
+let g:monokai_term_italic = 1
+let g:monokai_gui_italic = 1
 set term=screen-256color 
+
+"javascript syntax highlighting configuration
+let g:javascript_plugin_jsdoc = 1 
+let g:javascript_plugin_ngdoc = 1
+set foldmethod=syntax
+
 " Make Vim recognize XTerm escape sequences for Page and Arrow
 " keys combined with modifiers such as Shift, Control, and Alt.
 " See http://www.reddit.com/r/vim/comments/1a29vk/_/c8tze8p
@@ -134,7 +147,7 @@ set helplang=cn
 
 "内码使用utf8，优先以utf8尝试解码
 set encoding=utf8
-set fencs=utf8,cp936
+set fencs=utf8,big5,cp936
 set termencoding=utf-8
 
 
@@ -185,7 +198,7 @@ let html_use_css = 1
 Bundle 'othree/html5.vim'
 
 "修正文件类型
-autocmd BufNewFile,BufRead *.tpl,*.htm,tplt set filetype=html
+autocmd BufNewFile,BufRead *.tpl,*.htm,tplt,*.etpl set filetype=html
 autocmd BufNewFile,BufRead *.xaml set filetype=xml
 autocmd BufNewFile,BufRead *.less set filetype=css
 autocmd BufNewFile,BufRead *.go set filetype=go
