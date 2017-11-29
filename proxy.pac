@@ -13,6 +13,7 @@ var domains = {
   "joachims.org": 1, 
   "maiio.net": 1, 
   "idv.tw": 1,
+  "whatwg.org": 1, 
   "goo.gl":1,
   "angularjs.org":1,	
   "html5rocks.com":1,
