@@ -5,16 +5,17 @@ set rtp+=~/.vim/vundle.git/
 
 call vundle#rc()
 
-Bundle 'gmarik/Vundle.git'
-Bundle 'plasticboy/vim-markdown'
-Bundle 'The-NERD-Commenter'
-Bundle 'Markdown'
-Bundle 'snipMate'
-Bundle 'editorconfig-vim'
-Bundle 'junegunn/vim-easy-align'
-Bundle 'crusoexia/vim-monokai'
-Bundle 'pangloss/vim-javascript'
-Bundle 'crusoexia/vim-javascript-lib'
+Plugin 'gmarik/Vundle.git'
+Plugin 'plasticboy/vim-markdown'
+Plugin 'The-NERD-Commenter'
+Plugin 'Markdown'
+Plugin 'snipMate'
+Plugin 'editorconfig-vim'
+Plugin 'junegunn/vim-easy-align'
+Plugin 'crusoexia/vim-monokai'
+Plugin 'pangloss/vim-javascript'
+Plugin 'crusoexia/vim-javascript-lib'
+Plugin 'isRuslan/vim-es6'
 "Bundle 'kristijanhusak/vim-hybrid-material'
 "colorscheme hybrid_material
 "Bundle 'altercation/vim-colors-solarized'
