@@ -16,10 +16,13 @@ Plugin 'crusoexia/vim-monokai'
 Plugin 'pangloss/vim-javascript'
 Plugin 'crusoexia/vim-javascript-lib'
 Plugin 'isRuslan/vim-es6'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+Plugin 'alunny/pegjs-vim'
+
 "Bundle 'kristijanhusak/vim-hybrid-material'
 "colorscheme hybrid_material
 "Bundle 'altercation/vim-colors-solarized'
-"syntax enable
 "set background=dark
 "colorscheme solarized
 "let g:solarized_termcolors=256
@@ -198,6 +201,9 @@ let html_use_css = 1
 "autocmd BufRead * set path=expand('%:h').'/**'
 Bundle 'othree/html5.vim'
 
+
+au BufNewFile,BufRead *.wxs setf javascript   
+
 "修正文件类型
 autocmd BufNewFile,BufRead *.tpl,*.htm,tplt,*.etpl set filetype=html
 autocmd BufNewFile,BufRead *.xaml set filetype=xml
@@ -328,9 +334,8 @@ if has('win32') || has('win64')
     "按<F11>调用系统默认程序打开文件
     nnoremap <silent> <F11> :let old_reg=@"<CR>:let @"=substitute(expand("%:p"), "/", "\\", "g")<CR>:silent!!cmd /cstart <C-R><C-R>"<CR><CR>:let @"=old_reg<CR>
 
+
 endif
-
-
 
 """"""""""""""""""""插件配置"""""""""""""""""""""
 
@@ -345,3 +350,6 @@ let g:netrw_winsize   = 23
 let g:netrw_liststyle = 3
 
 set nofoldenable
+
+""""tagba配置""
+
